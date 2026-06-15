@@ -18,7 +18,6 @@ program
 program.parse(process.argv);
 const options = program.opts();
 
-// Simple promise-based readline helper for interactive fallback mode
 const askQuestion = (query) => {
   const rl = readline.createInterface({
     input: process.stdin,
@@ -30,12 +29,11 @@ const askQuestion = (query) => {
   }));
 };
 
-// Clean terminal spinner implementation using native interval frames
 function createSpinner(text) {
   const frames = ['⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏'];
   let i = 0;
   
-  process.stdout.write('\x1B[?25l'); // Hide terminal cursor
+  process.stdout.write('\x1B[?25l');
   const interval = setInterval(() => {
     process.stdout.write(`\r${chalk.cyan(frames[i++ % frames.length])} ${text}`);
   }, 80);
@@ -43,8 +41,8 @@ function createSpinner(text) {
   return {
     stop: (successText, isError = false) => {
       clearInterval(interval);
-      process.stdout.write('\r\x1B[K'); // Clear line buffer
-      process.stdout.write('\x1B[?25h'); // Restore terminal cursor
+      process.stdout.write('\r\x1B[K');
+      process.stdout.write('\x1B[?25h');
       if (isError) {
         console.log(`${chalk.red('✖')} ${successText}`);
       } else {
@@ -57,8 +55,7 @@ function createSpinner(text) {
 async function main() {
   let proxyUrl = options.proxy;
   let filePath = options.file;
-
-  // Manual fallback check if command line arguments are missing
+  
   if (!proxyUrl || !filePath) {
     console.log(chalk.bold.gray('\n--- Spilyoxifier Configuration Setup ---'));
     
@@ -74,7 +71,7 @@ async function main() {
       filePath = await askQuestion(`${chalk.blue('ℹ')} Enter path to target file [./src/build.mjs]: `);
       filePath = filePath || './src/build.mjs';
     }
-    console.log(); // Spacing block
+    console.log();
   }
 
   const absolutePath = path.resolve(filePath);
