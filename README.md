@@ -1,3 +1,3 @@
 # Spilyoxifier
 
-[badge](https://img.shields.io/badge/build-passing-brightgreen?style=for-the-badge)
+![buildpassing](https://img.shields.io/badge/build-passing-brightgreen?style=for-the-badge)
