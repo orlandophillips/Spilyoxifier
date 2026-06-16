@@ -1,55 +1,82 @@
 # Spilyoxifier ![buildpassing](https://img.shields.io/badge/build-passing-brightgreen?style=flat) [![StarusonGitHub](https://img.shields.io/badge/Star_us_on_GitHub-blue?style=flat&logo=github)](https://github.com/orlandophillips/Spilyoxifier) [![GitHubrelease](https://img.shields.io/github/v/release/orlandophillips/Spilyoxifier)](https://github.com/orlandophillips/Spilyoxifier/releases) [![GitHubissues](https://img.shields.io/github/issues/orlandophillips/Spilyoxifier)](https://github.com/orlandophillips/Spilyoxifier/issues)
 
-Spilyoxifier allows you to modify Spicy Lyrics build or source and add a proxy to access the API, especially useful for middleware or evading censorship by automated web filtering tools such as FortiNet.
+Spilyoxifier allows you to modify the Spicy Lyrics build or source file to inject a proxy for API access. This is especially useful for middleware integration or evading censorship by automated web filtering networks (such as FortiNet).
 
 ## Installation
-It uses a CLI Interface which can be installed via npm. To do so, enter the following into your terminal with npm installed:
+
+Spilyoxifier features a CLI interface available as an npm package. Install it globally or locally via your terminal:
 
 ```console
-npm install Spilyoxifier
+npm install spilyoxifier
 ```
 
 ## Usage
-To use the CLI App, it has two parameters:
+
+The CLI application accepts two main parameters:
+
 ```console
 spilyoxifier --proxy "https://example.com"
 ```
-or:
+
+or specify a target file:
+
 ```console
 spilyoxifier --file "./spicy-lyrics.mjs"
 ```
-Both these can be combined to add the proxy to your build of Spicy Lyrics without the interactive terminal fallback. For shorthand operations, you can use the alias:
+
+### Combined & Shorthand Commands
+Both arguments can be combined to patch your Spicy Lyrics build directly without triggering the interactive terminal fallback. You can also use the shorthand alias **`spx`**:
 
 ```console
-spx [params]
+spx --proxy "https://example.com" --file "./spicy-lyrics.mjs"
+```
+
+To see all available flags and options, run:
+```console
+spx --help
 ```
 
 ## Proxy Support
 
-Spilyoxifier currently only supports cors-anywhere instances or any custom HTTP proxy endpoint that routes directly to the SpicyLyrics API (e.g., https://example.com/api.spicylyrics.org)
+Spilyoxifier currently only supports **cors-anywhere** instances or any custom HTTP proxy endpoint that routes directly to the SpicyLyrics API (e.g., `https://example.com`).
 
-If you don't know how to setup your own proxy refer to the [cors-anywhere](https://github.com/Rob--W/cors-anywhere) GitHub page and use the example setup. To setup your environment, install the cors-anywhere npm module and setup a normal Node.js workspace. For linux do:
+### Setting Up a Quick Proxy
+If you do not have a proxy set up, you can deploy a local reverse proxy using the [cors-anywhere](https://github.com/Rob--W/cors-anywhere) package:
 
+**For Linux / macOS:**
 ```console
-npm install cors-anywhere
 npm init -y
-touch proxy.js # Or for Windows use: notepad proxy.js
+npm install cors-anywhere
+touch proxy.js
 ```
 
-Open proxy.js and paste the example from the [cors-anywhere](https://github.com/Rob--W/cors-anywhere) GitHub page and save it then run it:
+**For Windows:**
+```console
+npm init -y
+npm install cors-anywhere
+notepad proxy.js
+```
+
+Open `proxy.js`, paste the basic server initialization example from the [cors-anywhere GitHub repository](https://github.com/Rob--W/cors-anywhere), save the file, and boot it up:
 
 ```console
 node proxy.js
 ```
 
-## Support
+## System Support
 
-Currently this project only supports npm or for source, releases only support .zip file extensions. Soon, I hope to make source releases available to Linux and MacOS.
+* **Package Managers**: Currently supports npm installations.
+* **Source Archives**: Source releases are currently provided strictly in `.zip` file extensions. 
+* **Roadmap**: Native Linux and macOS source tarball distribution packages are coming soon.
 
-## Credits
+## Contributing & Credits
 
-- orlandophillips - Owner and Maintainer
+* **orlandophillips** — Owner and Lead Maintainer
 
-If you want to edit the source or propose changes, I will review future PR requests and fix issues. I won't except PRs to the main branch but only staged.
+If you want to modify the source or suggest changes, please open an issue or submit a Pull Request. 
+
+*Note: We do not accept PRs submitted directly to the `main` branch. Please target your pull requests to the `staged` branch for review.*
+
+***
 
 © Copyright 2026 - Spilyoxifier
