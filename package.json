@@ -27,7 +27,8 @@
     "tslib": "^2.8.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "bun build ./bin/spilyoxifier.js --compile --target=bun-linux-x64 --outfile ./dist/spilyoxifier-linux && bun build ./bin/spilyoxifier.js --compile --target=bun-darwin-arm64 --outfile ./dist/spilyoxifier-macos-arm && bun build ./bin/spilyoxifier.js --compile --target=bun-darwin-x64 --outfile ./dist/spilyoxifier-macos-intel && bun build ./bin/spilyoxifier.js --compile --target=bun-windows-x64 --outfile ./dist/spilyoxifier-windows.exe"
   },
   "keywords": [],
   "author": "",

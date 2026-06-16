@@ -9,7 +9,7 @@ import { patchDefaultsVariable } from '../src/patcher.js';
 const program = new Command();
 
 program
-  .name('spilyoxify')
+  .name('spilyoxifier')
   .description('Patch spicylyrics build assets with custom routing configurations.')
   .version('1.0.0')
   .option('-p, --proxy <url>', 'Proxy server destination URL')
