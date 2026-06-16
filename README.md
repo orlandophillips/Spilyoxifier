@@ -98,8 +98,7 @@ node proxy.js
 ## System Support
 
 * **Package Managers**: Currently supports npm installations.
-* **Source Archives**: Source releases are currently provided strictly in `.zip` file extensions. 
-* **Roadmap**: Native Linux and macOS source tarball distribution packages are coming soon.
+* **Source Archives**: Source releases support Linux, MacOS and Windows (v1.0.1 onwards) 
 
 ## Contributing & Credits
 
