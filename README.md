@@ -36,6 +36,38 @@ To see all available flags and options, run:
 spx --help
 ```
 
+## Build Configuration
+
+To build all binaries from source, you can use the following command:
+
+```console
+bun run build
+```
+
+This will put all Linux, macOS, and Windows binaries in the `dist` folder. 
+
+If you want to build the source for a specific target binary, you can run the corresponding command below:
+
+### Linux (64-bit)
+```console
+bun build ./bin/spilyoxifier.js --compile --target=bun-linux-x64 --outfile ./dist/spilyoxifier-linux
+```
+
+### macOS (Apple Silicon M1/M2/M3/M4)
+```console
+bun build ./bin/spilyoxifier.js --compile --target=bun-darwin-arm64 --outfile ./dist/spilyoxifier-macos-arm
+```
+
+### macOS (Intel Processors)
+```console
+bun build ./bin/spilyoxifier.js --compile --target=bun-darwin-x64 --outfile ./dist/spilyoxifier-macos-intel
+```
+
+### Windows (64-bit)
+```console
+bun build ./bin/spilyoxifier.js --compile --target=bun-windows-x64 --outfile ./dist/spilyoxifier-windows.exe
+```
+
 ## Proxy Support
 
 Spilyoxifier currently only supports **cors-anywhere** instances or any custom HTTP proxy endpoint that routes directly to the SpicyLyrics API (e.g., `https://example.com`).
