@@ -89,7 +89,7 @@ npm install cors-anywhere
 notepad proxy.js
 ```
 
-Open `proxy.js`, paste the basic server initialization example from the [cors-anywhere GitHub repository](https://github.com/Rob--W/cors-anywhere), save the file, and boot it up:
+Open `proxy.js`, paste the basic server initialization example from the [cors-anywhere](https://github.com/Rob--W/cors-anywhere) GitHub repository, save the file, and boot it up:
 
 ```console
 node proxy.js
