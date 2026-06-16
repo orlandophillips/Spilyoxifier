@@ -23,3 +23,33 @@ Both these can be combined to add the proxy to your build of Spicy Lyrics withou
 ```console
 spx [params]
 ```
+
+## Proxy Support
+
+Spilyoxifier currently only supports cors-anywhere instances or any custom HTTP proxy endpoint that routes directly to the SpicyLyrics API (e.g., https://example.com/api.spicylyrics.org)
+
+If you don't know how to setup your own proxy refer to the [cors-anywhere](https://github.com/Rob--W/cors-anywhere) GitHub page and use the example setup. To setup your environment, install the cors-anywhere npm module and setup a normal Node.js workspace. For linux do:
+
+```console
+npm install cors-anywhere
+npm init -y
+touch proxy.js # Or for Windows use: notepad proxy.js
+```
+
+Open proxy.js and paste the example from the [cors-anywhere](https://github.com/Rob--W/cors-anywhere) GitHub page and save it then run it:
+
+```console
+node proxy.js
+```
+
+## Support
+
+Currently this project only supports npm or for source, releases only support .zip file extensions. Soon, I hope to make source releases available to Linux and MacOS.
+
+## Credits
+
+- orlandophillips - Owner and Maintainer
+
+If you want to edit the source or propose changes, I will review future PR requests and fix issues. I won't except PRs to the main branch but only staged.
+
+© Copyright 2026 - Spilyoxifier
