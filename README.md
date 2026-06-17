@@ -8,6 +8,7 @@ Spilyoxifier features a CLI interface available as an npm package. Install it gl
 
 ```bash
 npm install spilyoxifier
+cd
 ```
 
 ## Usage
