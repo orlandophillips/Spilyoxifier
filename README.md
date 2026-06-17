@@ -6,9 +6,8 @@ Spilyoxifier allows you to modify the Spicy Lyrics build or source file to injec
 
 Spilyoxifier features a CLI interface available as an npm package. Install it globally or locally via your terminal:
 
-```bash
+```console
 npm install spilyoxifier
-cd
 ```
 
 ## Usage
